@@ -206,13 +206,18 @@ const Register = () => {
             />
           </div>
         </form>
+        <div className="register-Login-error-container">
+          <p className="login-option-in-register">
+            Already have an account? <span>Log In</span>
+          </p>
+
+          <h1>
+            {error?.status === 409
+              ? "User with email and Password already exist"
+              : ""}
+          </h1>
+        </div>
       </div>
-      <h1>{response?.data?.message}</h1>
-      <h1>
-        {error?.status === 409
-          ? "User with email and Password already exist"
-          : "askdj"}
-      </h1>
     </section>
   );
 };
